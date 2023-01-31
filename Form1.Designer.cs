@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.countScore = new System.Windows.Forms.Label();
             this.numberA = new System.Windows.Forms.Label();
             this.numberB = new System.Windows.Forms.Label();
@@ -36,6 +37,9 @@
             this.resultAnswer = new System.Windows.Forms.Label();
             this.textAnswer = new System.Windows.Forms.TextBox();
             this.Check = new System.Windows.Forms.Button();
+            this.timerlb = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // countScore
@@ -97,9 +101,9 @@
             this.resultAnswer.ForeColor = System.Drawing.Color.Blue;
             this.resultAnswer.Location = new System.Drawing.Point(12, 101);
             this.resultAnswer.Name = "resultAnswer";
-            this.resultAnswer.Size = new System.Drawing.Size(43, 13);
+            this.resultAnswer.Size = new System.Drawing.Size(37, 13);
             this.resultAnswer.TabIndex = 6;
-            this.resultAnswer.Text = "correct!";
+            this.resultAnswer.Text = "Result";
             this.resultAnswer.Click += new System.EventHandler(this.resultAnswer_Click);
             // 
             // textAnswer
@@ -122,11 +126,36 @@
             this.Check.UseVisualStyleBackColor = true;
             this.Check.Click += new System.EventHandler(this.CheckButtonClickEvent);
             // 
+            // timerlb
+            // 
+            this.timerlb.AutoSize = true;
+            this.timerlb.Location = new System.Drawing.Point(76, 9);
+            this.timerlb.Name = "timerlb";
+            this.timerlb.Size = new System.Drawing.Size(36, 13);
+            this.timerlb.TabIndex = 9;
+            this.timerlb.Text = "Timer:";
+            this.timerlb.Click += new System.EventHandler(this.timerlb_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(118, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(55, 20);
+            this.textBox1.TabIndex = 10;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 138);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.timerlb);
             this.Controls.Add(this.Check);
             this.Controls.Add(this.textAnswer);
             this.Controls.Add(this.resultAnswer);
@@ -152,6 +181,9 @@
         private System.Windows.Forms.Label resultAnswer;
         private System.Windows.Forms.TextBox textAnswer;
         private System.Windows.Forms.Button Check;
+        private System.Windows.Forms.Label timerlb;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
